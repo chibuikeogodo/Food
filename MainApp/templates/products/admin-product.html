@@ -1,0 +1,44 @@
+{%extends 'new/index.html'%}
+{%load static%}
+    {%block title%}
+    Products
+    {%endblock%}
+{%block body%}
+<br/>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <a href="{%url 'create_product'%}" class="btn btn-primary">Add New Products</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <br/>
+  <div class="alert alert-primary" role="alert">
+  <h4 align="center">Products</h4>
+</div>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <b><th scope="col">Product Name</th></b>
+      <th scope="col">Category</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for products in products%}
+    <tr>
+      <td>{{products.name}}</td>
+      <td>{{products.category}}</td>
+      <td>
+        <a class="btn btn-primary" href="{%url 'update_product' products.id%}" role="button">Update</a>
+        <a class="btn btn-danger" href="{%url 'delete_products' products.id%}" role="button">Delete</a>
+      </td>
+    </tr>
+  {%endfor%}
+</table>
+</div>
+
+{%endblock%}

@@ -1,0 +1,39 @@
+{%extends 'index.html'%}
+{%load static%}
+    {%block title%}
+    My Orders
+    {%endblock%}
+{%block body%}
+<br/>
+<div class="container">
+    <div class="card text-center">
+      <div class="card-header">
+          <h4>My Orders</h4>
+      </div>
+    <br/>
+    <div class="row">
+    {%for user_order in user_orders%}
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Order ID: #{{user_order.order_number}}</h5>
+            <p class="card-text">{{user_order.date}}</p>
+            <a href="{%url 'user-order-detail' user_order.id%}" class="btn btn-primary">View Order</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+        <div class="col-sm-12">
+            <div class="card text-center">
+              <div class="card-body">
+                <p class="card-text">Sorry, You don;t have any order yet. click the button below to place an order</p>
+                <a href="{%url 'create_order'%}" class="btn btn-primary">Place order</a>
+              </div>
+        </div>
+        </div>
+    {%endfor%}
+    </div>
+</div>
+</div>
+<br/><br/>
+{%endblock%}

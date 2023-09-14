@@ -1,0 +1,92 @@
+{%extends 'new/index.html'%}
+{%load static%}
+    {%block title%}
+    Order Details
+    {%endblock%}
+{%block body%}
+<br/>
+<div class="container">
+  <br/>
+  <div class="alert alert-primary" role="alert">
+  <h4 align="center">Order Details</h4>
+</div>
+  <h4>Order ID: <b>#{{order.order_number}}</b></h4>
+  <br/>
+<div class="row">
+  <div class="col-sm-6">
+    <h5 align="center">Personal Details</h5>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <th scope="row">Full Name</th>
+          <td></td>
+          <td></td>
+          <td>{{order.user.first_name}} {{order.user.last_name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address</th>
+          <td></td>
+          <td></td>
+          <td>{{order.Address}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Phone</th>
+          <td></td>
+          <td></td>
+          <td>{{order.Phone}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td></td>
+            <td></td>
+            <td>{{order.email}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-6">
+    <h5 align="center">Company's Details</h5>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <th scope="row">Company Name</th>
+          <td></td>
+          <td></td>
+          <td>{{order.Company_Name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Delivery_Address</th>
+          <td></td>
+          <td></td>
+          <td>{{order.delivery_address}}</td>
+        </tr>
+        <tr>
+          <th scope="row">delivery Port</th>
+          <td></td>
+          <td></td>
+          <td>{{order.delivery_port}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td></td>
+            <td></td>
+            <td>{{order.email}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <br/><br/>
+  <div class="card">
+    <h5 align="center" class="card-header">Products Ordered</h5>
+    <div class="card-body">
+      <h5 class="card-title">
+        {{order.products|safe|linebreaksbr|linebreaks|urlize}}
+      </h5>
+    </div>
+  </div>
+
+</div>
+<br/><br/>
+
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'new/index.html'%}
+{%load static%}
+{%block body%}
+<br/>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <a href="{%url 'create_category'%}" class="btn btn-primary">Add New Category</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <br/>
+  <div class="alert alert-primary" role="alert">
+  <h4 align="center">Category</h4>
+</div>
+  <table class="table">
+  <tbody>
+  {%for categories in categories%}
+    <tr>
+      <td><b>{{categories.name}}</b></td>
+      <td> <a href="{%url 'update_category' categories.id%}"><button type="button" class="btn btn-primary">Update</button></a>
+      <a href="{%url 'delete_category' categories.id%}"><button type="button" class="btn btn-danger">Delete</button></a>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+</div>
+
+{%endblock%}

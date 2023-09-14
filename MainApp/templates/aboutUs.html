@@ -1,0 +1,69 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block title%}
+About Us
+{%endblock%}
+{%block body%}
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>ABOUT US</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">ABOUT US</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+    <!-- Start About Page  -->
+    <div class="about-box-main">
+        <div class="container">
+            <div class="row">
+				<div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid" src="{%static 'images/big-img-02.jpg'%}" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top">We are <span>Zhejiang Willing Foods</span></h2>
+                    <p>Zhejiang Willing Foods is dedicated to providing you with an exceptional range of food products that cater to your culinary desires.
+                        With a commitment to quality and a passion for delivering the finest food items, we have become a trusted name in the industry.</p>
+                    <p>Our extensive selection covers a wide spectrum of food categories, ensuring that you find exactly what you need to meet your cravings and preferences.
+                        From fresh produce to pantry staples, artisanal delicacies to everyday essentials, we have it all. Whether you're an enthusiastic home cook, a professional chef, or simply someone who enjoys good food, Zhejiang Willing Foods is here to serve you.</p>
+                    <p>Placing an order with us is effortless. Just let us know your requirements by typing in what you need, and we will promptly send you a detailed quotation receipt. Our user-friendly ordering process ensures that you get the products you want quickly and conveniently.</p>
+                    <p>At Zhejiang Willing Foods, we take great pride in our commitment to quality. We work closely with trusted suppliers to ensure that our products meet the highest standards of freshness, taste, and safety.
+                        Our team is dedicated to sourcing the best ingredients and products from around the world, so you can trust that you're getting nothing but the best when you order from us.</p>
+                    <p>We understand that food is not just sustenance but an integral part of our lives. It brings people together, creates memories, and satisfies our senses.
+                        That's why we are passionate about providing you with the best food products to enhance your culinary experiences.</p>
+
+                    <a class="btn hvr-hover" href="{%url 'create_order'%}">Order</a>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Trusted</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Professional</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Expert</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End About Page -->
+{%endblock%}

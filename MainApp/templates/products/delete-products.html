@@ -1,0 +1,28 @@
+{%extends 'new/index.html'%}
+{%load static%}
+    {%block title%}
+    Delete Product
+    {%endblock%}
+{%block body%}
+<br/>
+<div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <a>Are you sure you want to delete?</a>
+                    <br>
+                    <br>
+                    <form method="POST">
+                        {%csrf_token%}
+                        <a class="btn btn btn-success" href="{%url 'ProductList'%}">Cancel</a>
+                        <input class="btn btn btn-danger" type="submit" name="confirm" value="Delete">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+
+         </div>
+
+</div>
+{%endblock%}

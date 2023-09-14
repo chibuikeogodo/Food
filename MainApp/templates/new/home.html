@@ -1,0 +1,106 @@
+{%extends 'new/index.html'%}
+{%load static%}
+{%block body%}
+<div class="content-wrapper">
+          <div class="content">
+                  <!-- Top Statistics -->
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Products</h5>
+                    <p class="card-text">Add and View Products</p>
+                    <a href="{%url 'ProductList'%}" class="btn btn-primary">Open</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Orders</h5>
+                    <p class="card-text">View all the orders</p>
+                    <a href="{%url 'orders'%}" class="btn btn-primary">Open</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/><br/>
+                  <div class="row">
+                    <div class="col-xl-3 col-sm-6">
+                      <div class="card card-default card-mini">
+                        <div class="card-header">
+                          <h2>{{orders_count}}</h2>
+                          <div class="dropdown">
+                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                          </div>
+                          <div class="sub-title">
+                            <span class="mr-1">Total Order</span> |
+                            <i class="mdi mdi-arrow-up-bold text-success"></i>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                      <div class="card card-default card-mini">
+                        <div class="card-header">
+                          <h2>{{products_count}}</h2>
+                          <div class="dropdown">
+                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                          </div>
+                          <div class="sub-title">
+                            <span class="mr-1">Total Product</span> |
+                            <i class="mdi mdi-arrow-up-bold text-success"></i>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    {%for product in last_products%}
+                    <div class="col-xl-3 col-sm-6">
+                      <div class="card card-default card-mini">
+                        <div class="card-header">
+                          <h2>{{product.name}}</h2>
+                          <div class="dropdown">
+                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                          </div>
+                          <div class="sub-title">
+                            <span class="mr-1">Last Product</span>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    {%endfor%}
+                    {%for order in last_order%}
+                    <div class="col-xl-3 col-sm-6">
+                      <div class="card card-default card-mini">
+                        <div class="card-header">
+                          <h2>{{order.user}}</h2>
+                          <div class="dropdown">
+                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                          </div>
+                          <div class="sub-title">
+                            <span class="mr-1">Last Ordered User</span>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    {%endfor%}
+                  </div>
+
+
+
+
+</div>
+
+        </div>
+{%endblock%}
